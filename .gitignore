@@ -1,0 +1,10 @@
+# Directories
+bin/
+obj/
+
+# Visual Studio files and folders
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.user
+**.vcxproj.filters
