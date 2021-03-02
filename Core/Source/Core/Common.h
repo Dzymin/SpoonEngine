@@ -15,7 +15,8 @@
 #endif 
 
 #ifdef SP_ENABLE_ASSERTS
-	#define SP_ASSERT(check) if(!(check)) { SP_DEBUGBREAK(); } //TODO: add error logging;
+	#define SP_CORE_ASSERT(check, msg) if(!(check)) { SP_CORE_ERROR(msg); SP_DEBUGBREAK(); }
+	#define SP_ASSERT(check, msg) if(!(check)) { SP_ERROR(msg); SP_DEBUGBREAK(); }
 #else
 	#define SP_ASSERT(check)
 #endif 
