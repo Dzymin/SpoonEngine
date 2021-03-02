@@ -17,7 +17,8 @@ project "Sandbox"
 
     includedirs {
         "Source/",
-        "%{wks.location}/Core/Source/"
+        "%{wks.location}/Core/Source/",
+        "%{wks.location}/Core/Vendor/spdlog/include"
     }
 
     filter "system:Windows"

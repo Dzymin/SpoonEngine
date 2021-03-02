@@ -7,10 +7,10 @@
 
 namespace Spoon
 {
-	RefPtr<Console> Console::Create()
+	ScopePtr<Console> Console::Create()
 	{
 		#ifdef SP_PLATFORM_WINDOWS
-			return CreateRef<WindowsConsole>();
+			return CreateScope<WindowsConsole>();
 		#else
 			SP_ASSERT(false);
 			return nullptr;

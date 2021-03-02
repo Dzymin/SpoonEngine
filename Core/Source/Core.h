@@ -1,2 +1,2 @@
 #pragma once
-#include "Utilities/Console.h"
+#include "Core/Log.h"

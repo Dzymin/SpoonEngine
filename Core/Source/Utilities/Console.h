@@ -8,6 +8,6 @@ namespace Spoon
 	public:
 		virtual ~Console() = default;
 
-		static RefPtr<Console> Create();
+		static ScopePtr<Console> Create();
 	};
 }

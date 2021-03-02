@@ -15,7 +15,8 @@ project "Core"
     }
 
     includedirs {
-        "Source/"
+        "Source/",
+        "Vendor/spdlog/include/"
     }
 
     filter "system:Windows"
