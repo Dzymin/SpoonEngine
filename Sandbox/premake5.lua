@@ -23,19 +23,19 @@ project "Sandbox"
     filter "system:Windows"
     systemversion "latest"
     defines { 
-        "SPOON_PLATFORM_WINDOWS",
+        "SP_PLATFORM_WINDOWS",
         "WIN32_LEAN_AND_MEAN" 
     }
 
     filter "action:vs*"
-        defines { "SPOON_TOOLSET_MSVC" }
+        defines { "SP_TOOLSET_MSVC" }
 
     filter "configurations:Debug"
         runtime "Debug"
         symbols "On"
-        defines { "SPOON_DEBUG" }
+        defines { "SP_DEBUG" }
 
     filter "configurations:Release"
         runtime "Release"
         optimize "On"
-        defines { "SPOON_RELEASE" }
+        defines { "SP_RELEASE" }
