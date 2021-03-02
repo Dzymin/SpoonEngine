@@ -6,11 +6,10 @@
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	Spoon::RefPtr<Spoon::Console> console = Spoon::Console::Create();
-	//console->RedirectIO();
 	while (true)
 	{
 		std::cout << "JD" << std::endl;
 	}
-	//console->ReleaseIO();
+	console.~shared_ptr();
 	return 0;
 }

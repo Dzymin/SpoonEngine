@@ -9,8 +9,5 @@ namespace Spoon
 		virtual ~Console() = default;
 
 		static RefPtr<Console> Create();
-
-		virtual void RedirectIO() = 0;
-		virtual void ReleaseIO() = 0;
 	};
 }
