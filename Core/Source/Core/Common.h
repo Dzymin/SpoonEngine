@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #ifdef SP_DEBUG
 	#if defined(SP_TOOLSET_MSVC)
 		#define SP_DEBUGBREAK() __debugbreak()
@@ -30,4 +32,22 @@ namespace Spoon
 	using uint16 = unsigned __int16;
 	using uint32 = unsigned __int32;
 	using uint64 = unsigned __int64;
+
+	template<typename T>
+	using ScopePtr = std::unique_ptr<T>;
+	
+	template<typename T, typename ... Args>
+	constexpr ScopePtr<T> CreateScope(Args&& ... args)
+	{
+		return std::make_unique<T>(std::forward<Args>(args)...);
+	}
+
+	template<typename T>
+	using RefPtr = std::shared_ptr<T>;
+
+	template<typename T, typename ... Args>
+	constexpr RefPtr<T> CreateRef(Args&& ... args)
+	{
+		return std::make_shared<T>(std::forward<Args>(args)...);
+	}
 }
