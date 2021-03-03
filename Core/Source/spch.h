@@ -15,7 +15,3 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <optional>
-
-#ifdef SP_PLATFORM_WINDOWS
-	#include <Windows.h>
-#endif 

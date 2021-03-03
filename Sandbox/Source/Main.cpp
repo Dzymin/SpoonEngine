@@ -1,12 +1,14 @@
 #include <Windows.h>
 #include "Core.h"
-#include <iostream>
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	bool isRunning = true;
 	Spoon::Log::Init();
-	while (isRunning);
+
+	Spoon::WindowCreateInfo createInfo = { 600, 600, 1024, 1024, L"It Works!"};
+	Spoon::RefPtr<Spoon::Window> window = Spoon::Window::Create(createInfo);
+
+	while (!window->ShouldClose());
 	{
 		MSG msg;
 		while (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))

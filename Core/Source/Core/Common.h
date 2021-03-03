@@ -2,6 +2,10 @@
 
 #include <memory>
 
+#ifdef SP_PLATFORM_WINDOWS
+	#include <Windows.h>
+#endif 
+
 #ifdef SP_DEBUG
 	#if defined(SP_TOOLSET_MSVC)
 		#define SP_DEBUGBREAK() __debugbreak()
