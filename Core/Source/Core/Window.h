@@ -17,6 +17,11 @@ namespace Spoon
 	public:
 		virtual ~Window() = default;
 
+		virtual int32 GetWidth() const = 0;
+		virtual int32 GetHeight() const = 0;
+		virtual int32 GetXPos() const = 0;
+		virtual int32 GetYPos() const = 0;
+		virtual std::pair<int32, int32> GetPos() const = 0;
 		virtual bool ShouldClose() const = 0;
 		virtual void* GetNativeHandle() const = 0;
 
