@@ -9,5 +9,5 @@ workspace "SpoonEngine"
         "Release"
     }
 
-    include "Core"
+    include "Engine"
     include "Sandbox"

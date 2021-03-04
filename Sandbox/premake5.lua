@@ -7,7 +7,7 @@ project "Sandbox"
     objdir ("%{wks.location}/obj/" .. OutputDir .. "/%{prj.name}")
 
     links {
-        "Core"
+        "Engine"
     }
 
     files {
@@ -17,8 +17,8 @@ project "Sandbox"
 
     includedirs {
         "Source/",
-        "%{wks.location}/Core/Source/",
-        "%{wks.location}/Core/Vendor/spdlog/include"
+        "%{wks.location}/Engine/Source/",
+        "%{wks.location}/Engine/Vendor/spdlog/include"
     }
 
     filter "system:Windows"
