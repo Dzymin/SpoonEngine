@@ -25,6 +25,6 @@ namespace Spoon
 		virtual bool ShouldClose() const = 0;
 		virtual void* GetNativeHandle() const = 0;
 
-		static RefPtr<Window> Create(const WindowCreateInfo& createInfo = WindowCreateInfo{ 0, 0, 720, 480, L"Spoon Game" });
+		static ScopePtr<Window> Create(const WindowCreateInfo& createInfo = WindowCreateInfo{ 0, 0, 720, 480, L"Spoon Game" });
 	};
 }

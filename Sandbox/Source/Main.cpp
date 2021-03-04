@@ -1,25 +1,19 @@
 #include <Windows.h>
-#include "Core.h"
+#include "SpoonEngine.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	Spoon::Log::Init();
-
-	Spoon::WindowCreateInfo createInfo = { 700, 100, 720, 480, L"Spoon Game" };
-	Spoon::WindowCreateInfo createInfo2 = { 100, 100, 720, 480, L"Spoon Game 2" };
-	Spoon::RefPtr<Spoon::Window> window = Spoon::Window::Create(createInfo);
-	Spoon::RefPtr<Spoon::Window> window2 = Spoon::Window::Create(createInfo2);
-
-	while (!window->ShouldClose() || !window2->ShouldClose())
+	Spoon::Engine* engine = new Spoon::Engine;
+	if (!engine->Init())
 	{
-		MSG msg = {};
-		while (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
-		{
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
-		}
+		SP_CRITICAL("Failed to initilize the engine");
+		delete engine;
+		return -1;
 	}
+	
+	engine->Run();
+	engine->Shutdown();
 
-
+	delete engine;
 	return 0;
 }

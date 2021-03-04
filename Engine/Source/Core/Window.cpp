@@ -7,10 +7,10 @@
 
 namespace Spoon
 {
-	RefPtr<Window> Window::Create(const WindowCreateInfo& createInfo)
+	ScopePtr<Window> Window::Create(const WindowCreateInfo& createInfo)
 	{
 		#ifdef SP_PLATFORM_WINDOWS
-			return CreateRef<WindowsWindow>(createInfo);
+			return CreateScope<WindowsWindow>(createInfo);
 		#endif 
 
 	}
